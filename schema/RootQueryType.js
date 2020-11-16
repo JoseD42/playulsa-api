@@ -31,7 +31,7 @@ const RootQueryType = new GraphQLObjectType({
             type: new GraphQLList(GameType),
             args: {groupId: {type: GraphQLID}},
             resolve(parent, args){
-                return Game.find({gameGroupId: args.groupId});
+                return Game.find({genreId: args.groupId});
             }
         },
         genre: {

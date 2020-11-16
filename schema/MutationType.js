@@ -49,15 +49,15 @@ const MutationType = new GraphQLObjectType({
                 return Game.findByIdAndRemove(args.id);
             }
         },
-        //game group
+        //genre
         addGenre: {
             type: GenreType,
             args: {
                 name: {type: GraphQLString}
             },
             resolve(parent, args){
-                const Genre = new Genre(args);
-                return Genre.save();
+                const genre = new Genre(args);
+                return genre.save();
             }
         },
         editGenre: {

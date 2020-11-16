@@ -14,7 +14,7 @@ const GenreType = new GraphQLObjectType({
         games: {
             type: new GraphQLList(GameType),
             resolve(parent, args){
-                return Game.find({gameGroupId: parent.id});
+                return Game.find({genreId: parent.id});
             }
         }
     })
